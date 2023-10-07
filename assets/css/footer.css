@@ -1,0 +1,13 @@
+.footer {
+    background-color: var(--primaire);
+    min-height: var(--espace-enorme);
+    display: flex;
+    flex-direction: column;
+}
+
+.footer hgroup {
+    margin-top: auto;
+    margin-left: auto;
+    color: grey;
+    padding: 15px;
+}
