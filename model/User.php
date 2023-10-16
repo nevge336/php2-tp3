@@ -4,13 +4,12 @@ require_once('Crud.php');
 class User extends Crud
 {
 
-    public $table = 'user';
-
+    public $table = 'mlab_user';
     public $primaryKey = 'id';
 
     public $fillable = [
         'id',
-        'nom',
+        'name',
         'username',
         'password',
         'privilege_id'

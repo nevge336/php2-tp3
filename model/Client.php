@@ -3,18 +3,17 @@ require_once('Crud.php');
 
 class Client extends Crud{
 
-    public $table = 'client';
+    public $table = 'mlab_client';
     public $primaryKey = 'id';
 
     public $fillable = [
         'id',
-        'nom',
-        'adresse',
+        'name',
+        'address',
         'postal_code',
-        'courriel',
+        'email',
         'phone',
-        'naissance',
-        'ville_id'
+        'city_id'
     ];
 
 }

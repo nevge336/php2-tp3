@@ -1,14 +1,14 @@
 <?php
 require_once('Crud.php');
 
-class Ville extends Crud{
+class City extends Crud{
 
-    public $table = 'ville';
+    public $table = 'mlab_city';
     public $primaryKey = 'id';
 
     public $fillable = [
         'id',
-        'ville'
+        'city'
     ];
 }
 

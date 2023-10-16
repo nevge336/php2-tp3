@@ -3,7 +3,7 @@ require_once('Crud.php');
 
 class Privilege extends Crud{
 
-    public $table = 'privilege';
+    public $table = 'mlab_privilege';
     public $primaryKey = 'id';
 
   

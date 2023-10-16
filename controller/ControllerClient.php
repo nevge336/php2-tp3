@@ -1,13 +1,13 @@
 <?php
 
 RequirePage::model('Client');
-RequirePage::model('Ville');
+RequirePage::model('City');
 
 class ControllerClient extends Controller
 {
 
 
-    
+
     public function index()
     {
 
@@ -22,17 +22,19 @@ class ControllerClient extends Controller
 
     public function create()
     {
-        $ville = new Ville;
-        $selectVille = $ville->select();
-        // print_r($selectVille);
+        CheckSession::sessionAuth();
+        $city = new City;
+        $selectCity = $city->select();
+        // print_r($selectCity);
         // die();
-        Twig::render('client-create.php', ['villes' => $selectVille]);
+        Twig::render('client-create.php', ['cities' => $selectCity]);
     }
 
 
 
     public function store()
     {
+        CheckSession::sessionAuth();
         if ($_SERVER["REQUEST_METHOD"] != "POST") {
             RequirePage::redirect('client/create');
             exit();
@@ -41,12 +43,12 @@ class ControllerClient extends Controller
         RequirePage::library('Validation');
         extract($_POST);
         $val = new Validation();
-        $val->name('nom')->value($nom)->max(30)->min(2)->pattern('alpha');
-        $val->name('adresse')->value($adresse)->max(50);
+        $val->name('name')->value($name)->max(30)->min(2)->pattern('alpha');
+        $val->name('address')->value($address)->max(50);
         $val->name('postal_code')->value($postal_code)->max(10);
-        $val->name('courriel')->value($courriel)->pattern('email')->required()->max(50);
+        $val->name('email')->value($email)->pattern('email')->required()->max(50);
         $val->name('phone')->value($phone)->max(20);
-        $val->name('naissance')->value($naissance)->pattern('date_ymd')->max(10);
+
 
         if ($val->isSuccess()) {
 
@@ -60,38 +62,47 @@ class ControllerClient extends Controller
 
             // print_r($errors);
             // die();
-            $ville = new Ville;
-            $selectVille = $ville->select();
+            $city = new City;
+            $selectCity = $city->select();
             //RequirePage::redirect('client/create');
-            Twig::render('client-create.php', ['villes' => $selectVille, 'errors' => $errors, 'data' => $_POST]);
+            Twig::render('client-create.php', ['cities' => $selectCity, 'errors' => $errors, 'data' => $_POST]);
         }
     }
 
+
+
     public function show($id)
     {
+        CheckSession::sessionAuth();
         $client = new Client;
         $selectId = $client->selectId($id);
         //print_r($selectId);
-        //echo $selectId['ville_id'];
-        $ville = new Ville;
-        $selectVille = $ville->selectId($selectId['ville_id']);
-        //print_r($selectVille);
-        $ville = $selectVille['ville'];
+        //echo $selectId['city_id'];
+        $city = new City;
+        $selectCity = $city->selectId($selectId['city_id']);
+        //print_r($selectCity);
+        $city = $selectCity['city'];
         //die();
-        Twig::render('client-show.php', ['client' => $selectId, 'ville' => $ville]);
+        Twig::render('client-show.php', ['client' => $selectId, 'city' => $city]);
     }
+
+
 
     public function edit($id)
     {
+        CheckSession::sessionAuth();
         $client = new Client;
         $selectId = $client->selectId($id);
-        $ville = new Ville;
-        $selectVille = $ville->select();
-        Twig::render('client-edit.php', ['client' => $selectId, 'villes' => $selectVille]);
+        $city = new City;
+        $selectCity = $city->select();
+        Twig::render('client-edit.php', ['client' => $selectId, 'cities' => $selectCity]);
     }
+
+
 
     public function update()
     {
+        CheckSession::sessionAuth();
         //print_r($_POST);
         $client = new Client;
         $update = $client->update($_POST);
@@ -101,6 +112,8 @@ class ControllerClient extends Controller
             print_r($update);
         }
     }
+
+
 
     public function destroy()
     {

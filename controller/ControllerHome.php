@@ -1,5 +1,5 @@
 <?php
-
+RequirePage::model('User');
 class ControllerHome extends Controller {
 
     public function index(){
