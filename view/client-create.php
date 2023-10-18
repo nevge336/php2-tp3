@@ -1,10 +1,10 @@
 {{ include('header.php', {title: 'Ajouter un client'})}}
-
-
 {% if errors is defined %}
     <span class="error">{{ errors|raw }}</span>
 {% endif %}
-
+<div class="sous-menu">
+    <a href="{{path}}client/index">Liste</a>
+</div>
 <form action="{{path}}client/store" method="post">
         <label>Nom
             <input type="text" name="name" value="{{data.name}}">

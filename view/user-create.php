@@ -1,5 +1,7 @@
 {{ include('header.php', {title: 'Ajouter un user'})}}
-
+<div class="sous-menu">
+    <a href="{{path}}user/index">Liste</a>
+</div>
 
 {% if errors is defined %}
     <span class="error">{{ errors|raw }}</span>

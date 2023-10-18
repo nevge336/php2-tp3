@@ -1,11 +1,7 @@
 .sous-menu {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    gap: var(--espace-moyen);
     
 }
 
-.sous-menu div {
-    display: flex;
-    gap: var(--espace-moyen);
-}

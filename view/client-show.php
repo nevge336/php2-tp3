@@ -1,5 +1,9 @@
 {{ include('header.php', {title: 'Client'})}}
-<a href="{{path}}client/edit/{{client.id}}">Modifier client</a>
+<div class="sous-menu">
+    <a href="{{path}}client/index">Liste</a>
+    <a href="{{path}}client/create/{{client.id}}">Ajouter</a>
+    <a href="{{path}}client/edit/{{client.id}}">Modifier</a>
+</div>
 
 <table>
     <tr>

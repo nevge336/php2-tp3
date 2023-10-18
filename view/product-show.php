@@ -1,5 +1,9 @@
 {{ include('header.php', {title: 'Produit'})}}
-<a href="{{path}}product/edit/{{product.id}}">Modifier product</a>
+<div class="sous-menu">
+    <a href="{{path}}product/index">Liste</a>
+    <a href="{{path}}product/create/{{product.id}}">Ajouter</a>
+    <a href="{{path}}product/edit/{{product.id}}">Modifier</a>
+</div>
 
 <table>
     <tr>
@@ -20,7 +24,7 @@
     </tr>
 
 </table>
-
+<img src="{{product.image_path}}" alt="">
 
 
 

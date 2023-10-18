@@ -1,6 +1,8 @@
 {{ include('header.php', {title: 'Mettre à jour le client'})}}
-
-<a href="{{path}}client">Liste clients</a>
+<div class="sous-menu">
+    <a href="{{path}}client/index">Liste</a>
+    <a href="{{path}}client/create/{{client.id}}">Ajouter</a>
+</div>
 <form action="{{path}}client/update" method="post">
     <input type="hidden" name="id" value="{{client.id}}">
     <label>Nom

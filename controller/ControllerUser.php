@@ -23,8 +23,8 @@ class ControllerUser extends Controller
     public function create()
     {
         $privilege = new Privilege;
-        $select = $privilege->select();
-        Twig::render('user-create.php', ['privileges' => $select]);
+        $selectPrivilege = $privilege->select();
+        Twig::render('user-create.php', ['privileges' => $selectPrivilege]);
     }
 
 
@@ -38,7 +38,7 @@ class ControllerUser extends Controller
         extract($_POST);
         RequirePage::library('Validation');
         $val = new Validation();
-        $val->name('name')->value($name)->max(45)->min(2)->pattern('alpha');
+        $val->name('name')->value($name)->max(45)->min(2)->pattern('words');
         $val->name('username')->value($username)->pattern('email')->required()->max(50);
         $val->name('password')->value($password)->pattern('alphanum')->min(6)->max(20);
         $val->name('privilege_id')->value($privilege_id)->required();
@@ -80,14 +80,13 @@ class ControllerUser extends Controller
         $selectId = $user->selectId($id);
         $privilege = new Privilege;
         $selectPrivilege = $privilege->select();
-        Twig::render('user-edit.php', ['user' => $selectId, 'privilege' => $selectPrivilege]);
+        Twig::render('user-edit.php', ['user' => $selectId, 'privileges' => $selectPrivilege]);
     }
 
 
 
     public function update()
     {
-        //print_r($_POST);
         $user = new User;
         $update = $user->update($_POST);
         if ($update) {

@@ -11,6 +11,7 @@ class Product extends Crud
         'name',
         'description',
         'cost',
-        'price'
+        'price',
+        'image_path'
     ];
 }

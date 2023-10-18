@@ -1,5 +1,7 @@
 {{ include('header.php', {title: 'Liste des users'})}}
-<a href="{{path}}user/create">Ajouter User</a>
+<div class="sous-menu">
+    <a href="{{path}}user/create/{{user.id}}">Ajouter</a>
+</div>
     <table>
         <tr>
             <th>Nom</th>

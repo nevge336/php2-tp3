@@ -1,6 +1,9 @@
 {{ include('header.php', {title: 'Modifier produit'})}}
+<div class="sous-menu">
+    <a href="{{path}}product/index/{{product.id}}">Liste</a>
+    <a href="{{path}}product/create/{{product.id}}">Ajouter</a>
+</div>
 
-<a href="{{path}}product">Liste produits</a>
 <form action="{{path}}product/update" method="post">
     <input type="hidden" name="id" value="{{product.id}}">
     <label>Nom
@@ -17,8 +20,6 @@
         <input type="text" name="price" value="{{product.price}}">
     </label>
 
-
- 
     <input type="submit" value="Modifier">
 </form>
 <form action="{{path}}product/destroy" method="post">

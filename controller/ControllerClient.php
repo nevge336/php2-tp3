@@ -42,8 +42,8 @@ class ControllerClient extends Controller
         RequirePage::library('Validation');
         extract($_POST);
         $val = new Validation();
-        $val->name('name')->value($name)->max(100)->min(2)->pattern('alpha');
-        $val->name('contact')->value($contact)->max(100)->min(2)->pattern('alpha');
+        $val->name('name')->value($name)->max(100)->min(2)->pattern('words');
+        $val->name('contact')->value($contact)->max(100)->min(2)->pattern('words');
         $val->name('address')->value($address)->max(50);
         $val->name('postal_code')->value($postal_code)->max(10);
         $val->name('email')->value($email)->pattern('email')->required()->max(50);

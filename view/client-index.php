@@ -1,6 +1,7 @@
 {{ include('header.php', {title: 'Liste de client'})}}
-
-<a href="{{path}}client/create">Ajouter Client</a>
+<div class="sous-menu">
+    <a href="{{path}}client/create/{{client.id}}">Ajouter</a>
+</div>
     <table>
         <tr>
             <th>Nom</th>
