@@ -1,7 +1,8 @@
 <?php
 require_once('Crud.php');
 
-class Client extends Crud{
+class Client extends Crud
+{
 
     public $table = 'mlab_client';
     public $primaryKey = 'id';
@@ -9,14 +10,11 @@ class Client extends Crud{
     public $fillable = [
         'id',
         'name',
+        'contact',
         'address',
         'postal_code',
         'email',
         'phone',
         'city_id'
     ];
-
 }
-
-
-?>

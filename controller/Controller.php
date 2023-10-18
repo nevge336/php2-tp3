@@ -1,7 +1,6 @@
 <?php
 
-abstract class Controller{
+abstract class Controller
+{
     abstract public function index();
 }
-
-?>

@@ -9,6 +9,9 @@
         <label>Nom
             <input type="text" name="name" value="{{data.name}}">
         </label>
+        <label>Contact
+            <input type="text" name="contact" value="{{data.contact}}">
+        </label>
         <label>Adresse
             <input type="text" name="address" value="{{data.address}}">
         </label>
@@ -18,7 +21,7 @@
         <label>Courriel
             <input type="email" name="email" value="{{data.email}}">
         </label>
-        <label>Phone
+        <label>Téléphone
             <input type="text" name="phone" value="{{data.phone}}">
         </label>
         <label>

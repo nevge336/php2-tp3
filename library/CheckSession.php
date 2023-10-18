@@ -9,4 +9,14 @@ class CheckSession
             RequirePage::redirect('login');
         }
     }
+
+    
+    static public function checkPrivilegeSuperAdmin()
+    {
+        if ($_SESSION['privilege'] == 1) {
+            return true;
+        } else {
+            RequirePage::redirect('client');
+        }
+    }
 }

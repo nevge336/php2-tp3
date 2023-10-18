@@ -6,14 +6,30 @@ require_once(__DIR__ . '/library/RequirePage.php');
 require_once(__DIR__ . '/vendor/autoload.php');
 require_once(__DIR__ . '/library/Twig.php');
 require_once(__DIR__ . '/library/checkSession.php');
+require_once(__DIR__ . '/model/Logbook.php');
 
 
+//Logbook
+$dataLogbook = [
+    'ip_address' => $_SERVER['REMOTE_ADDR'],
+    'date' => date('Y-m-d H:i:s'), 
+    'username' => '', // You can set the username here
+    'visited_url' => $_SERVER['REQUEST_URI']
+];
+
+if (isset($_SESSION['user_name'])) {
+    $dataLogbook['username'] = $_SESSION['user_name'];
+} else {
+    $dataLogbook['username'] = 'guest';
+}
+
+$logbook = new Logbook;
+$insert = $logbook->insert($dataLogbook);
 
 //$url = isset($_SERVER['PATH_INFO']) ? explode('/', ltrim($_SERVER['PATH_INFO'], '/')) : '/';
 $url = isset($_GET["url"]) ? explode('/', ltrim($_GET["url"], '/')) : '/';
 
-//echo $url;
-//print_r($url);
+
 
 if ($url == '/') {
     $controllerHome = __DIR__ . '/controller/ControllerHome.php';

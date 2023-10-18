@@ -1,6 +1,7 @@
-{{ include('header.php', {title: 'Bienvenue'})}}
+{{ include('header.php', {title: 'Bienvenue'  }  )}}
 {# comments #}
-    <h1>{{ user.name }}</h1>
-    <p>OO PHP APP</p>
+
+    <h2>{{ session.user_name }}</h2>
+
 </body>
 </html>

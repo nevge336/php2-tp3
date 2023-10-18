@@ -4,12 +4,15 @@ RequirePage::model('Product');
 
 class ControllerProduct extends Controller
 {
+    public function __construct()
+    {
+        CheckSession::sessionAuth();
+    }
 
 
 
     public function index()
     {
-        CheckSession::sessionAuth();
         $product = new Product;
         $select = $product->select();
         Twig::render('product-index.php', ['products' => $select]);
@@ -19,7 +22,6 @@ class ControllerProduct extends Controller
 
     public function create()
     {
-        CheckSession::sessionAuth();
         Twig::render('product-create.php');
     }
 
@@ -28,7 +30,6 @@ class ControllerProduct extends Controller
     public function store()
     {
         // print_r($_POST);
-        CheckSession::sessionAuth();
         $product = new Product;
         $insert = $product->insert($_POST);
         // return $insert;
@@ -39,7 +40,6 @@ class ControllerProduct extends Controller
 
     public function show($id)
     {
-        CheckSession::sessionAuth();
         $product = new Product;
         $selectId = $product->selectId($id);
         //print_r($selectId);
@@ -50,7 +50,6 @@ class ControllerProduct extends Controller
 
     public function edit($id)
     {
-        CheckSession::sessionAuth();
         $product = new Product;
         $selectId = $product->selectId($id);
         Twig::render('product-edit.php', ['product' => $selectId]);
@@ -60,7 +59,6 @@ class ControllerProduct extends Controller
 
     public function update()
     {
-        CheckSession::sessionAuth();
         //print_r($_POST);
         $product = new Product;
         $update = $product->update($_POST);
@@ -74,18 +72,12 @@ class ControllerProduct extends Controller
 
     public function destroy()
     {
-        // print_r($_POST);
-        // die();
         $product = new Product;
         $delete = $product->delete($_POST['id']);
-        // echo $delete;
-        // die();
         if ($delete) {
             RequirePage::redirect('product');
         } else {
             print_r($delete);
         }
     }
-
-
 }

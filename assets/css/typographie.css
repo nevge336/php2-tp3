@@ -10,3 +10,8 @@ a {
 h2 {
     margin-bottom: var(--espace-grand);
 }
+
+h3 {
+    /* font-size: var(--police-grand); */
+    color: var(--gris-moyen);
+}

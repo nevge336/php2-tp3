@@ -1,7 +1,8 @@
 <?php
 require_once('Crud.php');
 
-class Sale extends Crud{
+class Sale extends Crud
+{
 
     public $table = 'mlab_sale';
     public $primaryKey = 'id';
@@ -14,6 +15,3 @@ class Sale extends Crud{
         'price'
     ];
 }
-
-
-?>

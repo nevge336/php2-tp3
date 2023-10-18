@@ -1,7 +1,8 @@
 <?php
 require_once('Crud.php');
 
-class City extends Crud{
+class City extends Crud
+{
 
     public $table = 'mlab_city';
     public $primaryKey = 'id';
@@ -11,6 +12,3 @@ class City extends Crud{
         'city'
     ];
 }
-
-
-?>

@@ -5,13 +5,14 @@ RequirePage::model('City');
 
 class ControllerClient extends Controller
 {
-
+    public function __construct()
+    {
+        CheckSession::sessionAuth();
+    }
 
 
     public function index()
     {
-
-        CheckSession::sessionAuth();
         $client = new Client;
         $select = $client->select();
 
@@ -22,11 +23,10 @@ class ControllerClient extends Controller
 
     public function create()
     {
-        CheckSession::sessionAuth();
+
         $city = new City;
         $selectCity = $city->select();
-        // print_r($selectCity);
-        // die();
+
         Twig::render('client-create.php', ['cities' => $selectCity]);
     }
 
@@ -34,7 +34,6 @@ class ControllerClient extends Controller
 
     public function store()
     {
-        CheckSession::sessionAuth();
         if ($_SERVER["REQUEST_METHOD"] != "POST") {
             RequirePage::redirect('client/create');
             exit();
@@ -43,7 +42,8 @@ class ControllerClient extends Controller
         RequirePage::library('Validation');
         extract($_POST);
         $val = new Validation();
-        $val->name('name')->value($name)->max(30)->min(2)->pattern('alpha');
+        $val->name('name')->value($name)->max(100)->min(2)->pattern('alpha');
+        $val->name('contact')->value($contact)->max(100)->min(2)->pattern('alpha');
         $val->name('address')->value($address)->max(50);
         $val->name('postal_code')->value($postal_code)->max(10);
         $val->name('email')->value($email)->pattern('email')->required()->max(50);
@@ -57,11 +57,8 @@ class ControllerClient extends Controller
 
             RequirePage::redirect('client');
         } else {
-            //var_dump($val->getErrors());
-            $errors = $val->displayErrors();
 
-            // print_r($errors);
-            // die();
+            $errors = $val->displayErrors();
             $city = new City;
             $selectCity = $city->select();
             //RequirePage::redirect('client/create');
@@ -73,24 +70,28 @@ class ControllerClient extends Controller
 
     public function show($id)
     {
-        CheckSession::sessionAuth();
         $client = new Client;
         $selectId = $client->selectId($id);
-        //print_r($selectId);
-        //echo $selectId['city_id'];
         $city = new City;
         $selectCity = $city->selectId($selectId['city_id']);
-        //print_r($selectCity);
         $city = $selectCity['city'];
-        //die();
         Twig::render('client-show.php', ['client' => $selectId, 'city' => $city]);
     }
 
+    // public function show($id, $innerjoin)
+    // {
 
+    //     $client = new Client;
+    //     $selectIdInnerjoin = $client->selectId($id);
+    //     $city = new City;
+    //     $selectCity = $city->selectId($selectId['city_id']);
+    //     $city = $selectCity['city'];
+    //     Twig::render('client-show.php', ['client' => $selectId, 'city' => $city]);
+    // }
 
     public function edit($id)
     {
-        CheckSession::sessionAuth();
+
         $client = new Client;
         $selectId = $client->selectId($id);
         $city = new City;
@@ -102,7 +103,6 @@ class ControllerClient extends Controller
 
     public function update()
     {
-        CheckSession::sessionAuth();
         //print_r($_POST);
         $client = new Client;
         $update = $client->update($_POST);
@@ -117,12 +117,8 @@ class ControllerClient extends Controller
 
     public function destroy()
     {
-        // print_r($_POST);
-        // die();
         $client = new Client;
         $delete = $client->delete($_POST['id']);
-        // echo $delete;
-        // die();
         if ($delete) {
             RequirePage::redirect('client');
         } else {

@@ -11,12 +11,12 @@
         <td>{{ product.description }}</td>
     </tr>
     <tr>
-        <th>Adresse: </th>
-        <td>{{ product.cost }}</td>
+        <th>Coût: </th>
+        <td>{{ product.cost }} $</td>
     </tr>
     <tr>
-        <th>Code Postal: </th>
-        <td>{{ product.price }}</td>
+        <th>Prix: </th>
+        <td>{{ product.price }} $</td>
     </tr>
 
 </table>

@@ -6,7 +6,7 @@
 {% endif %}
 <form action="{{path}}user/store" method="post">
         <label>Nom
-            <input type="text" name="nom" value="{{data.name}}">
+            <input type="text" name="name" value="{{data.name}}">
         </label>
         <label>Username
             <input type="email" name="username" value="{{data.username}}">

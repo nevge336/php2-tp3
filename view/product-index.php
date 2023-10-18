@@ -12,8 +12,8 @@
                 <tr>
                     <td><a href='{{path}}product/show/{{product.id}}'>{{ product.name }}</a></td>
                     <td>{{ product.description }}</td>
-                    <td>{{ product.cost }}</td>
-                    <td>{{ product.price }}</td>
+                    <td>{{ product.cost }} $</td>
+                    <td>{{ product.price }} $</td>
                     
                 </tr>
 

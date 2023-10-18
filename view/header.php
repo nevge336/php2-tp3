@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <!-- mettre une condition s'il y a un header -->
     <nav>
 
         <div class='menu'>
@@ -19,17 +20,28 @@
                 </a>
                 <p>Mlab</p>
             </header>
+            {% if session %}
+
+            <h3>Bienvenue {{session.user_name}}</h3>
+
+
+            {% endif %}
             <div>
+                {% if guest %}
+                <a href="{{path}}login">Login</a>
+                {% else %}
                 <a href="{{path}}client">Clients</a>
                 <a href="{{path}}product">Produits</a>
-                <a href="{{path}}user/create">Ajouter User</a>
-                <a href="{{path}}login">Login</a>
+                {% if session.privilege == 1 %}
+                <a href="{{path}}user">User</a>
+                {% endif %}
                 <a href="{{path}}login/logout">Logout</a>
+
+                {% endif %}
+
             </div>
         </div>
     </nav>
 
     <main>
-    <h1>{{title}}</h1> 
-
-
+        <h1>{{title}} </h1>

@@ -4,16 +4,19 @@
 <form action="{{path}}client/update" method="post">
     <input type="hidden" name="id" value="{{client.id}}">
     <label>Nom
-        <input type="text" name="nom" value="{{client.name}}">
+        <input type="text" name="name" value="{{client.name}}">
+    </label>
+    <label>Contact
+        <input type="text" name="contact" value="{{client.contact}}">
     </label>
     <label>Adresse
-        <input type="text" name="adresse" value="{{client.address}}">
+        <input type="text" name="address" value="{{client.address}}">
     </label>
     <label>Code Postal
         <input type="text" name="postal_code" value="{{client.postal_code}}">
     </label>
     <label>Courriel
-        <input type="email" name="courriel" value="{{client.email}}">
+        <input type="email" name="email" value="{{client.email}}">
     </label>
     <label>Phone
         <input type="text" name="phone" value="{{client.phone}}">

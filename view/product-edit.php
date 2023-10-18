@@ -7,7 +7,8 @@
         <input type="text" name="name" value="{{product.name}}">
     </label>
     <label>Description
-        <input type="text" name="description" value="{{product.description}}">
+
+        <textarea name="description" rows="5" cols="50" >{{product.description}}</textarea>
     </label>
     <label>Coût
         <input type="text" name="cost" value="{{product.cost}}">
