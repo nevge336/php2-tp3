@@ -43,43 +43,30 @@ class ControllerProduct extends Controller
         $val->name('coût')->value($cost)->pattern('int');
         $val->name('prix')->value($price)->pattern('int');
 
+
         // Traitement de l'image téléchargée
         if ($val->isSuccess()) {
-            // File processing code
-            if (!empty($_FILES['image_path']['name'])) {
-
-                $targetDirectory = "C:\wamp64\www\cours-PHP2\TRAVAUX\php2-tp3\assets\img\uploads\\" ; // Directory to store the uploaded image
-
-                $targetFile = $targetDirectory . basename($_FILES['image_path']['name']); // Path of the uploaded image file
-
-                // Move the uploaded image to the target directory
-                if (move_uploaded_file($_FILES['image_path']['tmp_name'], $targetFile)) {
-                    // The image file was successfully uploaded
-                    // You can save the file path or perform further processing if needed
-                    $imagePath = $targetFile; // Save the file path for database insertion
-                    // print_r($imagePath);
-                    // die();
-                } else {
-                    // The image file was not uploaded successfully
-                    // Handle the error according to your needs
-                    echo "Error uploading image.";
-                    exit;
-                }
-            } else {
-                // No image file was uploaded
-                // Handle the case where the image is required or provide a default image
-                echo "No image file provided.";
-                exit;
-            }
-            
-            $insertImage = [
-                'image_path' => $imagePath
-            ];
 
             $product = new Product;
-            $insert = $product->insert($_POST, $insertImage);
+            // Directory to store the uploaded image
+            $targetDirectory = IMG_DIR; 
+            // $fileName = $_FILES['image_path']['name']
+            $targetFile = $targetDirectory . basename($_FILES['image_path']['name']); // Path of the uploaded image file
+            $imageName = $_FILES['image_path']['name'];
+            $_POST['image_path'] = $imageName;
 
-            RequirePage::redirect('product');
+            // Move the uploaded image to the target directory
+            if (move_uploaded_file($_FILES['image_path']['tmp_name'], $targetFile)) {
+                // The image file was successfully uploaded
+                $insert = $product->insert($_POST);
+                RequirePage::redirect('product');
+            } else {
+                // The image file was not uploaded successfully
+                // Handle the error according to your needs
+                echo "Error uploading image.";
+                exit;
+                RequirePage::redirect('product-create');
+            }
         } else {
             $errors = $val->displayErrors();
             Twig::render('product-create.php', ['errors' => $errors, 'data' => $_POST]);

@@ -1,6 +1,8 @@
 <?php
 session_start();
 define('PATH_DIR', 'http://localhost/cours-PHP2/TRAVAUX/PHP2-tp3/');
+define('IMG_DIR', __DIR__ . '\assets\img\uploads\\');
+
 require_once(__DIR__ . '/controller/Controller.php');
 require_once(__DIR__ . '/library/RequirePage.php');
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -9,11 +11,12 @@ require_once(__DIR__ . '/library/checkSession.php');
 require_once(__DIR__ . '/model/Logbook.php');
 
 
+
 //Logbook
 $dataLogbook = [
     'ip_address' => $_SERVER['REMOTE_ADDR'],
     'date' => date('Y-m-d H:i:s'), 
-    'username' => '', // You can set the username here
+    'username' => '', 
     'visited_url' => $_SERVER['REQUEST_URI']
 ];
 
@@ -25,6 +28,9 @@ if (isset($_SESSION['user_name'])) {
 
 $logbook = new Logbook;
 $insert = $logbook->insert($dataLogbook);
+
+
+
 
 //$url = isset($_SERVER['PATH_INFO']) ? explode('/', ltrim($_SERVER['PATH_INFO'], '/')) : '/';
 $url = isset($_GET["url"]) ? explode('/', ltrim($_GET["url"], '/')) : '/';

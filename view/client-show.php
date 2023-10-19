@@ -32,7 +32,7 @@
     </tr>
     <tr>
         <th>Ville: </th>
-        <td>{{ client.city_id }}</td>
+        <td>{{ city }}</td>
     </tr>
 </table>
 

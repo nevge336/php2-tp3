@@ -14,8 +14,7 @@ class ControllerClient extends Controller
     public function index()
     {
         $client = new Client;
-        $select = $client->select();
-
+        $select = $client->selectInnerJoin();
         Twig::render('client-index.php', ['clients' => $select]);
     }
 
@@ -26,7 +25,6 @@ class ControllerClient extends Controller
 
         $city = new City;
         $selectCity = $city->select();
-
         Twig::render('client-create.php', ['cities' => $selectCity]);
     }
 
@@ -51,17 +49,14 @@ class ControllerClient extends Controller
 
 
         if ($val->isSuccess()) {
-
             $client = new Client;
             $insert = $client->insert($_POST);
-
             RequirePage::redirect('client');
         } else {
 
             $errors = $val->displayErrors();
             $city = new City;
             $selectCity = $city->select();
-            //RequirePage::redirect('client/create');
             Twig::render('client-create.php', ['cities' => $selectCity, 'errors' => $errors, 'data' => $_POST]);
         }
     }
@@ -78,16 +73,7 @@ class ControllerClient extends Controller
         Twig::render('client-show.php', ['client' => $selectId, 'city' => $city]);
     }
 
-    // public function show($id, $innerjoin)
-    // {
 
-    //     $client = new Client;
-    //     $selectIdInnerjoin = $client->selectId($id);
-    //     $city = new City;
-    //     $selectCity = $city->selectId($selectId['city_id']);
-    //     $city = $selectCity['city'];
-    //     Twig::render('client-show.php', ['client' => $selectId, 'city' => $city]);
-    // }
 
     public function edit($id)
     {
@@ -103,7 +89,6 @@ class ControllerClient extends Controller
 
     public function update()
     {
-        //print_r($_POST);
         $client = new Client;
         $update = $client->update($_POST);
         if ($update) {

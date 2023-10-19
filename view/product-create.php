@@ -19,7 +19,7 @@
         <input type="text" name="price" value="{{data.price}}">
     </label>
     <label>Image
-        <input type="file" name="image_path">
+        <input type="file" name="image_path" accept="image/*">
     </label>
     <input type="submit" value="Enregistrer">
 </form>

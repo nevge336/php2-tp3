@@ -17,6 +17,7 @@ abstract class Crud extends PDO
     }
 
 
+
     public function selectId($value)
     {
         $sql = "SELECT * FROM $this->table WHERE $this->primaryKey = :$this->primaryKey";
@@ -35,10 +36,12 @@ abstract class Crud extends PDO
         }
     }
 
-    // public function selectIdInnerJoin($value, $InnerJoinSql)
-    // {
-    //     $sql = "SELECT * FROM $this->table $InnerJoinSql WHERE $this->primaryKey = :$this->primaryKey";
 
+    // public function selectIdInnerJoin($value, $requeteSql)
+    // {
+    //     $sql = "SELECT * FROM $this->table $requeteSql WHERE $this->primaryKey = :$this->primaryKey";
+    //     print_r($sql);
+    //     die;
     //     $stmt = $this->prepare($sql);
     //     $stmt->bindValue(":$this->primaryKey", $value);
     //     $stmt->execute();

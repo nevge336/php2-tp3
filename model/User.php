@@ -36,14 +36,6 @@ class User extends Crud
                 $_SESSION['fingerPrint'] = md5($_SERVER['HTTP_USER_AGENT'] . $_SERVER['REMOTE_ADDR']);
                 return true;
 
-                // RequirePage::redirect('client');
-
-                //logbook - journal de connection: adresse ip $_SERVER - REDIRECT_URL 
-                // adressip + variable  REDI
-                // print_r($_SERVER);
-                // echo $_SERVER['REDIRECT_URL'];
-                // echo $_SERVER['REMOTE_ADDR'];
-
             } else {
                 return false;
             }

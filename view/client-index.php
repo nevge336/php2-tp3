@@ -21,7 +21,7 @@
                     <td>{{ client.postal_code }}</td>
                     <td>{{ client.phone }}</td>
                     <td>{{ client.email }}</td>
-                    <td>{{ client.city_id }}</td>
+                    <td>{{ client.city }}</td>
                     
                 </tr>
 
