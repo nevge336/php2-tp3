@@ -5,6 +5,7 @@ abstract class Crud extends PDO
 
     public function __construct()
     {
+        // parent::__construct('mysql:host=localhost; dbname=e9040356; port=3306; charset=utf8', 'e9040356', 'ypsvFC6RQCCLVc6xvhmq');
         parent::__construct('mysql:host=localhost; dbname=mlab; port=3306; charset=utf8', 'root', '');
     }
 
