@@ -14,7 +14,7 @@ class ControllerUser extends Controller
     public function index()
     {
         $user = new User;
-        $select = $user->select();
+        $select = $user->selectInnerJoin();
 
         Twig::render('user-index.php', ['users' => $select]);
     }

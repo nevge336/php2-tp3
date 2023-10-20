@@ -43,4 +43,13 @@ class User extends Crud
             return false;
         }
     }
+
+    public function selectInnerJoin()
+    {
+        $sql = "SELECT mlab_user.id, name, username, privilege FROM mlab_user
+        inner join mlab_privilege 
+        on mlab_user.privilege_id = mlab_privilege.id";
+        $stmt = $this->query($sql);
+        return $stmt->fetchAll();
+    }
 }

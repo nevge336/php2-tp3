@@ -16,7 +16,7 @@
             <td>{{ product.description }}</td>
             <td>{{ product.cost }} $</td>
             <td>{{ product.price }} $</td>
-            <td><img class="cent" src="../assets/img/uploads/{{product.image_path}}" alt=""></td>
+            <td class="pic-img cent"><img src="../assets/img/uploads/{{ product.image_path }}" alt=""></td>
         </tr>
     {% endfor %}
 

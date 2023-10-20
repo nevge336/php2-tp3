@@ -39,7 +39,7 @@ class ControllerProduct extends Controller
         extract($_POST);
         $val = new Validation();
         $val->name('nom')->value($name)->max(100)->min(2)->pattern('words');
-        $val->name('description')->value($description)->max(200)->min(2)->pattern('words');
+        $val->name('description')->value($description)->max(200);
         $val->name('coût')->value($cost)->pattern('int');
         $val->name('prix')->value($price)->pattern('int');
 
@@ -49,7 +49,7 @@ class ControllerProduct extends Controller
 
             $product = new Product;
             // Directory to store the uploaded image
-            $targetDirectory = IMG_DIR; 
+            $targetDirectory = IMG_DIR;
             // $fileName = $_FILES['image_path']['name']
             $targetFile = $targetDirectory . basename($_FILES['image_path']['name']); // Path of the uploaded image file
             $imageName = $_FILES['image_path']['name'];
@@ -59,13 +59,13 @@ class ControllerProduct extends Controller
             if (move_uploaded_file($_FILES['image_path']['tmp_name'], $targetFile)) {
                 // The image file was successfully uploaded
                 $insert = $product->insert($_POST);
-                RequirePage::redirect('product');
+                RequirePage::redirect('product/index');
             } else {
                 // The image file was not uploaded successfully
                 // Handle the error according to your needs
                 echo "Error uploading image.";
                 exit;
-                RequirePage::redirect('product-create');
+                RequirePage::redirect('product-create.php');
             }
         } else {
             $errors = $val->displayErrors();
@@ -112,7 +112,7 @@ class ControllerProduct extends Controller
         $product = new Product;
         $delete = $product->delete($_POST['id']);
         if ($delete) {
-            RequirePage::redirect('product');
+            RequirePage::redirect('product/index');
         } else {
             print_r($delete);
         }

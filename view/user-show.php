@@ -16,7 +16,7 @@
     </tr>
     <tr>
         <th>Privilege: </th>
-        <td>{{ user.privilege_id }}</td>
+        <td>{{ privilege }}</td>
     </tr>
 
 </table>

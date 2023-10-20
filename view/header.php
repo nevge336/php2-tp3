@@ -30,10 +30,11 @@
                 {% if guest %}
                 <a href="{{path}}login">Login</a>
                 {% else %}
-                <a href="{{path}}client">Clients</a>
-                <a href="{{path}}product">Produits</a>
+                <a href="{{path}}client/index">Clients</a>
+                <a href="{{path}}product/index">Produits</a>
                 {% if session.privilege == 1 %}
-                <a href="{{path}}user">User</a>
+                <a href="{{path}}user/index">User</a>
+                <a href="{{path}}logbook/index">Logbook</a>
                 {% endif %}
                 <a href="{{path}}login/logout">Logout</a>
 

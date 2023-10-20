@@ -24,7 +24,7 @@
 </form>
 <form action="{{path}}product/destroy" method="post">
     <input type="hidden" name="id" value="{{product.id}}">
-    <input type="submit" value="Effacer">
+    <input type="submit" value="Supprimer">
 </form>
 </body>
 

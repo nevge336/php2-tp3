@@ -24,7 +24,7 @@
         </tr>
 
     </table>
-    <div class="trois-cent">
+    <div class="trois-cent pic-img">
         <img  src="../../assets/img/uploads/{{product.image_path}}" alt="">
     </div>
 

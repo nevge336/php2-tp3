@@ -13,7 +13,7 @@
                 <tr>
                     <td><a href='{{path}}user/show/{{user.id}}'>{{ user.name }}</a></td>
                     <td>{{ user.username }}</td>
-                    <td>{{ user.privilege_id }}</td>                  
+                    <td>{{ user.privilege }}</td>                  
                 </tr>
 
         {% endfor %}

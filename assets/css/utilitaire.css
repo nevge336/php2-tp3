@@ -1,5 +1,6 @@
 .cent {
-    max-width: 100px;
+    width: 100px;
+    height: 100px;
 }
 
 .deux-colonnes {
@@ -17,6 +18,7 @@
 }
 .trois-cent {
     max-width: 300px;
+    max-height: 300px;
     flex-basis: 200px;
     flex-grow: 1;
 }
