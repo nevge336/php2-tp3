@@ -8,15 +8,19 @@ class ControllerUser extends Controller
     public function __construct()
     {
         CheckSession::sessionAuth();
-        CheckSession::checkPrivilegeSuperAdmin();
+        // CheckSession::checkPrivilegeSuperAdmin();
     }
 
     public function index()
     {
-        $user = new User;
-        $select = $user->selectInnerJoin();
+        if ($_SESSION['privilege'] == 1) {
+            $user = new User;
+            $select = $user->selectInnerJoin();
 
-        Twig::render('user-index.php', ['users' => $select]);
+            Twig::render('user-index.php', ['users' => $select]);
+        } else {
+            RequirePage::redirect('login');
+        }
     }
 
 
@@ -36,6 +40,7 @@ class ControllerUser extends Controller
         }
 
         extract($_POST);
+
         RequirePage::library('Validation');
         $val = new Validation();
         $val->name('name')->value($name)->max(45)->min(2)->pattern('words');

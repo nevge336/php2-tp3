@@ -1,0 +1,143 @@
+/* pour gerer l'espacement du module dans la page */
+.image-text-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-3xs);
+    cursor: pointer;
+}
+
+.image-text-flex article {
+    background-color: var(--offwhite);
+}
+
+.image-text-flex .detail {
+    flex-basis: 100%;
+    padding: var(--space-xl);
+    pointer-events: none;
+}
+
+.image-text-flex .detail p{
+    margin-top: var(--space-2xs);
+}
+
+.image-text-flex .detail span{
+    font-size: var(--typo-1);
+    font-family: var(--secondary-font);
+}
+
+.image-text-flex span:not(:first-child){
+    font-style: italic;
+}
+.image-text-flex span:first-child{
+    font-weight: bold;
+}
+
+.image-text-flex .short {
+    flex-basis: 200px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    min-height: 400px;
+    padding: var(--space-m);
+}
+
+.image-text-flex .short-icone {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-m);
+    margin-left: auto;
+}
+
+.image-text-flex .short-desc {
+    margin-top: auto;
+    margin-bottom: auto;
+    align-self: center;
+    font-size: var(--typo-0);
+}
+
+.image-text-flex .short-desc h2 {
+    padding: 0 0 var(--space-s) 0;
+}
+
+
+
+.image-text-flex>picture {
+    flex-basis: 350px;
+    flex-grow: 1;
+}
+
+.image-text-flex img {
+    border-radius: var(--radius);
+}
+
+.image-text-flex aside {
+    flex-basis: 20px;
+    flex-grow: 1;
+}
+
+/*mini sont les petites images sur le coté page timbre*/
+.image-text-flex .mini {
+    /* max-width: 100px; */
+    min-width: 50px;
+    cursor: pointer;
+}
+
+.gouttiere {
+    padding: 0;
+}
+
+/* plus petit que 600 px*/
+@media (max-width:600px) {
+    .image-text-flex {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .image-text-flex .mini {
+        display: flex;
+        flex-direction: row;
+        /* flex-wrap: wrap; */
+        max-width: 100px;
+        order: 2;
+    }
+
+    .image-text-flex .gouttiere {
+        padding: 0;
+    }
+
+    .image-text-flex picture {
+        order: 1;
+    }
+
+    .image-text-flex .short {
+        order: 3;
+    }
+
+    .image-text-flex .detail {
+        order: 4;
+        padding: var(--space-s);
+
+
+    }
+
+}
+
+
+
+/*ici on gère l'espace autour du module - en petit écran on élimine l'espace*/
+/* entre 800 et 1500px*/
+@media (min-width: 800px) and (max-width: 1500px) {
+    .image-text-flex {
+        margin: 0 var(--space-xl);
+    }
+}
+
+/*Plus grand que 1500px*/
+@media (min-width: 1500px) {
+    .image-text-flex {
+        max-width: 1200px;
+        margin: var(--space-l) auto;
+
+    }
+}

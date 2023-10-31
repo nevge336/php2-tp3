@@ -1,0 +1,44 @@
+.breadcrumb {
+    container-type: inline-size;
+    margin-top: var(--space-l);
+    margin-left: var(--space-l);
+    margin-bottom: var(--space-3xs);
+    font-size: var(--typo-0);
+    cursor: pointer;
+}
+
+@container (width < 500px) {
+    .breadcrumb small {
+        display: none;
+    }
+}
+
+.live {
+    color: var(--redish);
+    font-size: var(--typo-2);
+    font-weight: 700;
+}
+
+.live:hover {
+    color: var(--dark-golden);
+}
+
+
+.fa-solid, .fa-regular {
+    margin-right: var(--space-2xs);
+
+}
+
+.fa-brands {
+    margin: var(--space-s);
+}
+
+.logo {
+    display: block;
+    width: var(--logo);
+}
+
+.margin-top-section {
+    margin-top: var(--space-xl);
+}
+

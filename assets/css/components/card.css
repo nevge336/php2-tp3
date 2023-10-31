@@ -1,0 +1,59 @@
+
+
+.card{
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	/* ombre personnalisée */
+	/* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  */
+	/* color: var(--medium-grey); */
+	font-family: var(--main-font);
+	font-size: var(--typo--1);
+}
+
+/*seulement les coeurs */
+.card > i {
+	position: absolute;
+	top: var(--space-2xs);
+	left: var(--space-2xs);
+	color: var(--offwhite);
+}
+
+/*ceux qui ont le statut liked sont golden*/
+.card i[data-status="liked"]{
+	color: var(--golden);
+}
+
+.card img{
+	/* aspect-ratio: 1; */
+	/* width: 100%; */
+	inset: 0;
+	object-fit: cover;
+	min-height: 100%;
+	border-radius: var(--radius);
+}
+
+.card a:hover{
+	/* filter: blur(3px); */
+	/* filter: grayscale(1); */
+	/* filter: saturate(2.2); */
+	opacity: 0.7;
+}
+
+
+
+.card .group div {
+	margin-top: var(--space-2xs);
+	color: var(--light-grey);
+}
+
+.card .lot {
+	display: flex;
+	justify-content: space-between;
+}
+
+
+
+
+
+

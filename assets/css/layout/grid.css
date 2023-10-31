@@ -1,0 +1,70 @@
+/* grille pour browser ordinaire */
+.grid {
+	display: column;
+	columns: 3;
+	gap:var(--space-s) ;
+}
+
+.grid > * {
+	break-inside: avoid;
+	margin-bottom: var(--space-s-m);
+}
+
+/* safari et Firefox nightly soutienne ce css */
+@supports (grid-template-rows: masonry) {
+	.grid {
+		
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(var(--space-4xl), 1fr));
+		grid-template-rows: masonry;
+	}
+	.grid > * {
+		margin-bottom: 0em;
+	}
+}
+
+
+/*Adaptation des colonnes selon la grosseur du container "box" */
+@container (width > 1000px ) {
+	.grid {
+		columns: 5;
+	}
+}
+
+@container (width > 600px ) and (width < 1000px) {
+	.grid {
+		columns: 4;
+	}
+}
+
+@container (width < 600px) and (width > 500px ) {
+	.grid {
+		columns: 3;
+	}
+}
+
+@container (width < 500px) and (width > 400px )  {
+	.grid {
+		columns: 2;
+	}
+}
+
+@container (width < 400px) {
+	.grid {
+		columns: 1;
+	}
+}
+
+
+
+/* .grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: var(--space-s);
+
+
+} */
+
+/* .grid .featured {
+	grid-column: span 2;
+} */

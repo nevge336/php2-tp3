@@ -1,0 +1,16 @@
+/* icone.css */
+
+.icone {
+    width: 30px;
+    height: 30px;
+    fill: var(--dark-golden);
+    z-index: 22;
+    padding: var(--space-3xs) 0;
+ }
+
+.icone:hover {
+    fill: var(--redish);
+    transition: fill 0.2s;
+    cursor: pointer;
+}
+

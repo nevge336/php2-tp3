@@ -1,0 +1,19 @@
+/*Mettre la classe dans picture et l'image s'ajuste à son parent*/
+
+.image-hero {
+    position: relative;
+    display: flex;
+}
+
+.image-hero > img {
+    position: absolute;
+	inset: 0;
+	width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+}
+
+
+
+

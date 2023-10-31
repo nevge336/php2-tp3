@@ -1,0 +1,97 @@
+.box {
+    container-type : inline-size;
+
+}
+
+
+
+
+/* filtres page catalogue*/
+main > .filtre {
+	container-type: inline-size;
+    flex-basis: 20%;
+    flex-grow: 1;
+	cursor: pointer;
+	min-width: 12ch;
+}
+
+main .box {
+	flex-basis: 70%;
+	flex-grow: 5;
+}
+
+
+/* C'est pour le "voir plus pour charger des timbres"*/
+main .plus {
+	flex-basis: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+/*C'est la boite rechercher en mobile pour le filtre*/
+.search {
+    min-width: 200px;
+    border: solid 3px var(--light-grey);
+    padding: var(--space-3xs);
+    pointer-events: none;
+    border-radius: var(--radius);
+}
+
+.afficher-plus section {
+	display: flex;
+	flex-direction: column;
+	gap:var(--space-m);
+}
+
+.afficher-plus label {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.afficher-plus input {
+	border: 2px solid var(--dark-golden);
+	border-radius: var(--radius);
+	padding: var(--space-3xs);
+}
+
+.afficher-plus div {
+	display: flex;
+	flex-direction: row;
+	gap: var(--space-m);
+}
+
+.afficher-plus p {
+	text-transform: uppercase;
+	font-weight: 700;
+	text-align: right;
+	}
+
+.afficher-plus p:hover{
+	color: var(--golden);
+}
+
+
+/* Filtres */
+.filtre a {
+	margin: var(--space-3xs);
+}
+
+.filtre span:hover {
+	color: var(--main-color);
+}
+
+.filtre section {
+	margin-bottom: var(--space-m);
+}
+
+@media (width < 540px ){
+	.filtre-complet {
+		display: none;
+	}
+}
+	
+@media (width > 540px) {
+	.afficher-plus {
+		display: none;
+	}
+}

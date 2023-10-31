@@ -1,0 +1,46 @@
+.netflix-bar {
+	display: grid;
+	grid-template-columns: repeat(12, minmax(var(--space-4xl), 1fr));
+	max-width: 100%;
+	overflow-x: auto;
+	overflow-y: visible;
+	padding: var(--space-l) var(--space-m); 
+    gap: var(--space-s);
+	cursor: pointer;
+	margin-bottom: var(--space-3xl);
+}
+
+.netflix-bar img {
+	border-radius: var(--radius);
+	/* overflow: hidden; */
+}
+
+.netflix-bar article:hover {
+	transform: scale(1.2);
+	transition: transform ease-in-out 180ms;
+}
+
+.netflix-bar {
+	scrollbar-width: none;
+	scrollbar-color: black;
+	/* overflow-y: hidden; */
+}
+
+.netflix-bar article {
+	position: relative;
+}
+
+.netflix-bar .fa-heart {
+	position: absolute;
+	top: var(--space-xs);
+	left: var(--space-xs);
+	z-index: 2;
+}
+
+.netflix-bar i[data-status="liked"]{
+	color: var(--golden);
+}
+
+.netflix-bar p {
+	color: var(--light-grey);
+}

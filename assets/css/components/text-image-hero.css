@@ -1,0 +1,68 @@
+/* pour gerer l'espacement du module dans la page */
+/* .text-image-hero contient l'image,
+et un div qui contient 1 div titre et 1 div boutons */
+.text-image-hero {
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	min-height: 70vmin;
+	color: var(--cream);
+	background-color: var(--green);
+	margin-bottom: var(--space-xl);
+	/* margin: 0 var(--space-l); */
+}
+
+
+/*div qui contient le titre et un div avec des boutons*/
+.text-image-hero > .entete {
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: var(--space-2xs);
+	z-index: 2;
+}
+
+/*le titre*/
+.text-image-hero h1{
+	font-size: var(--typo-4);
+	text-transform: uppercase;
+	color: var(--);
+	max-width: 30ch;
+}
+
+.text-image-hero h3 {
+	margin-top: var(--space-xs);
+}
+
+.text-image-hero time {
+	/* margin-bottom: var(--space-xs); */
+	font-weight: 500;
+	font-size: var(--typo--1);
+	margin-left: var(--space-xl);
+}
+
+
+/* C'est le div qui contient le bouton */
+.text-image-hero > div {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xs);
+	justify-content: center;
+	padding: var(--space-2xs);
+
+}
+
+.text-image-hero .bottom {
+	justify-content: flex-end;
+}
+
+/*pour pouvoir cliquer sur le bouton*/
+.text-image-hero .button {
+	z-index: 2;
+} 
+.text-image-hero summary {
+	font-size: var(--typo-1);
+}
+
+
+

@@ -13,10 +13,20 @@ class CheckSession
     
     static public function checkPrivilegeSuperAdmin()
     {
-        if ($_SESSION['privilege'] == 1) {
+        if ($_SESSION['privilege'] == 2) {
             return true;
         } else {
             RequirePage::redirect('client');
         }
     }
+
+    static public function checkPrivilegeMember()
+    {
+        if ($_SESSION['privilege'] == 2) {
+            return true;
+        } else {
+            RequirePage::redirect('client');
+        }
+    }
+
 }

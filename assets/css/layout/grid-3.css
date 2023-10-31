@@ -1,0 +1,7 @@
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(var(--space-4xl), 1fr));
+    /* border-left-style: solid ;
+    border-left-color: var(--dark-golden);
+    border-left-width: var(--space-2xs); */
+}

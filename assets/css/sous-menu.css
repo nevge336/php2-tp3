@@ -1,7 +1,0 @@
-.sous-menu {
-    display: flex;
-    flex-direction: row;
-    gap: var(--espace-moyen);
-    
-}
-

@@ -1,0 +1,55 @@
+@keyframes homeFondu {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.home {
+    font-size: var(--typo-1);
+}
+
+.fond {
+    min-height: 100vh;
+    background-color: var(--main-color);
+    max-width: 100%;
+    position: relative;
+    container-type: inline-size;
+}
+
+.centre {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    max-width: var(--logo-home);
+    justify-content: center;
+    gap: var(--space-xl);
+}
+
+.centre.anime {
+    animation: homeFondu 3000ms forwards;
+}
+
+@container (width > 750px){
+    .fond img {
+        object-position: right;
+    }
+    .centre {
+        margin-left: var(--space-ms);
+    }
+
+}
+@container (width < 750px){
+    .fond img {
+        object-position: left;
+    }
+    .centre {
+        margin-left: auto;
+        margin-right: auto;
+        padding: var(--space-s);
+    }
+}

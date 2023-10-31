@@ -4,10 +4,10 @@ RequirePage::model('Product');
 
 class ControllerProduct extends Controller
 {
-    public function __construct()
-    {
-        CheckSession::sessionAuth();
-    }
+    // public function __construct()
+    // {
+    //     CheckSession::sessionAuth();
+    // }
 
 
 
@@ -22,6 +22,7 @@ class ControllerProduct extends Controller
 
     public function create()
     {
+        CheckSession::sessionAuth();
         Twig::render('product-create.php');
     }
 

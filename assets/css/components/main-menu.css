@@ -1,0 +1,62 @@
+/* main-menu.css --------------------------------
+
+composante*/
+
+/* comportement d'affichage*/
+.main-menu {
+    top: 0px;
+    right: 0px; 
+    background-color: var(--main-color);
+    transition: all 0.5s ease-out;
+ }
+
+ 
+  
+.main-menu a{
+    padding: 0 0 var(--space-s);
+    /* padding-top: var(--space-s);
+    padding-right: var(--space-m);
+    padding-bottom: var(--space-s);
+    padding-left: 0px; */
+}
+
+
+
+.main-menu a:hover{
+    color: var(--light-blue);
+}
+
+.main-menu .fa-solid, .main-menu .fa-regular {
+    margin-right: var(--space-s-m);
+}
+
+@media (max-width: 600px) {
+    .main-menu {
+        position: fixed;
+        inset: 0;
+        text-align: center;        
+     }
+     .main-menu a:first-child {
+        margin-top: var(--space-3xl);
+    }
+
+    .main-menu a{
+        padding-left: 50%;
+        text-align: left;
+        transform: translateX(-12.5%);
+    }
+
+}
+
+@media (min-width: 600px) {
+
+    .main-menu {
+        position: absolute;
+        padding: var(--space-3xl);
+    }
+
+
+
+    
+}
+

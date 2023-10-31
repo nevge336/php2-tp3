@@ -1,0 +1,31 @@
+.top-menu {
+    container-type: inline-size;
+    inset: 0;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    background-color: white; 
+    position: sticky;
+    top: 0;
+    /* z-index: 1; */
+    /* transition: top 0.3s;*/
+}
+
+.top-menu div {
+    display: flex;
+    gap: var(--space-m);
+    align-items: center;
+    background-color: white;
+}
+
+
+/* @container (max-width: 900px) {
+    .top-menu div {
+        margin-right: var(--space-2xl)
+    } */
+ 
+    @container (max-width: 600px) {
+    .top-menu div {
+        display: none;
+    }
+}

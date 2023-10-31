@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&family=Open+Sans:ital@0;1&family=Spinnaker&display=swap");
+
+/* Base typographique à être héritée */
+html {
+  font-family: "Montserrat", "Open Sans", "Spinnaker", sans-serif;
+  line-height: 1.5625;
+}
+
+/* Interlignage propre aux titres
+    (moins espacé que le contenu courant) */
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.25;
+  font-family: var(--secondary-font);
+}
+
+/* Largeur maximale de toute 
+		ligne de paragraphe pour une lisibilité adéquate */
+p {
+  max-width: 85ch;
+}
+
+p {
+  font-family: var(--main-font);
+  font-size: var(--size-0);
+}
+
+nav {
+  font-size: var(--typo-0);
+}

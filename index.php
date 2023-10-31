@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-define('PATH_DIR', 'https://e9040356.webdev.cmaisonneuve.qc.ca/php2-tp3/');
-// define('PATH_DIR', 'http://localhost/cours-PHP2/TRAVAUX/PHP2-tp3/');
+// define('PATH_DIR', 'https://e9040356.webdev.cmaisonneuve.qc.ca/php2-tp3/');
+define('PATH_DIR', 'http://localhost/cours-PHP2/TRAVAUX/PHP2-tp3-copie2/');
 
 // define('IMG_DIR', __DIR__ . '\assets\img\uploads\\');
 define('IMG_DIR', __DIR__ . '/assets/img/uploads/');

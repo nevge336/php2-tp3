@@ -1,0 +1,96 @@
+.button {
+    display: inline-block;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: var(--secondary-font);
+
+text-align: center;
+    font-size: var(--typo--1);
+}
+
+
+/*définir la grosseur du button */
+.button.xs {
+    padding: var(--space-3xs);
+    font-weight: 100;
+    border-radius: 5px;
+}
+
+.button.small {
+    /* margin-bottom: var(--space-xs); */
+    padding: var(--space-s);
+    margin: var(--space-2xs);
+}
+
+.button.medium {
+    padding: var(--space-s);
+    font-size: var(--typo-0);
+    text-transform: uppercase;
+}
+
+.button.large {
+    padding: var(--space-l);
+    font-size: var(--typo-0);
+}
+
+.button.xl {
+    padding: var(--space-xl);
+}
+
+.button.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*définir la couleur du button primaire ou secondaire*/
+.button.primary {
+    background-color: var(--medium-green);
+    color: var(--offwhite);
+}
+
+.button.primary:hover {
+    background-color: var(--light-green);
+    color: var(--main-color);
+}
+
+.button.secondary {
+    background-color: var(--cream);
+    color: var(--main-color);
+
+}
+
+.button.secondary:hover {
+    background-color: var(--main-color);
+    color: var(--cream);
+}
+
+.button.third {
+    background-color: var(--light-blue);
+    color: var(--main-color);
+
+}
+
+.button.third:hover {
+    background-color: var(--main-color);
+    color: var(--light-blue);
+}
+
+.button.fourth {
+    background-color: var(--dark-golden);
+    color: var(--offwhite);
+
+}
+
+.button.fourth:hover {
+    background-color: var(--golden);
+    color: var(--dark-red);
+}
+
+/* Sur épaisseur */
+.button-double {
+   background-color: var(--light-golden);
+}
+

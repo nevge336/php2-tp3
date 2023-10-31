@@ -1,5 +1,4 @@
 {{ include('header.php', {title: 'Liste de produits'})}}
-<a href="{{path}}product/create">Ajouter</a>
 
 <table>
     <tr>
@@ -21,5 +20,8 @@
     {% endfor %}
 
 </table>
-</body>
-</html>
+
+
+
+
+{{ include('footer.php')}}

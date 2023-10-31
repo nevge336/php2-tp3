@@ -1,0 +1,29 @@
+.flex-column {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+    justify-content: center;
+}
+
+.flex-column div {
+    flex-basis: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-column form {
+    padding: var(--space-xl);
+    background-color: var(--cream);
+}
+
+.flex-column .inscription {
+    
+    padding: var(--space-xl);
+    background-color: var(--light-blue);
+    color: var(--cream);
+    justify-content: center;
+    text-align: center;
+    gap: var(--space-xs);
+    font-size: var(--typo-1);
+}

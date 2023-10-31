@@ -28,7 +28,7 @@ class ControllerLogin extends Controller
 
             $user = new User;
             if ($user->checkUser($username, $password)) {
-                RequirePage::redirect('index.php');
+                RequirePage::redirect('login');
             } else {
                 RequirePage::redirect('home/error');
             }
